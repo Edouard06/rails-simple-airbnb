@@ -1,0 +1,16 @@
+<h1>Détails de l'appartement : <%= @flat.name %></h1>
+
+<div class="flat-details">
+  <p><strong>Adresse :</strong> <%= @flat.address %></p>
+  <p><strong>Prix par nuit :</strong> <%= @flat.price_per_night %></p>
+  <p><strong>Nombre de personnes :</strong> <%= @flat.number_of_guests %></p>
+  <p><strong>Description :</strong> <%= @flat.description %></p>
+</div>
+<%= link_to "Delete",
+  flat_path(@flat),
+  method: :delete,
+  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+  class: "btn btn-danger" # Ajoute une virgule ici
+%>
+<%= link_to "Retour à la liste des appartements", flats_path %>
+<%= link_to "Modifier", edit_flat_path(@flat.id) %>

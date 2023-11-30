@@ -1,0 +1,20 @@
+<h1>All flat available</h1>
+
+<div class="flats">
+  <%= form_with(url: delete_selected_flats_path, method: :delete) do |form| %>
+    <div class="row">
+      <% @flats.each do |flat| %>
+        <div class="col-md-6 mb-4">
+          <div class="flat">
+            <h2><%= flat.name %></h2>
+            <p><%= flat.address %></p>
+            <p>Prix par nuit : <%= flat.price_per_night %></p>
+            <p>Nombre de personnes : <%= flat.number_of_guests %></p>
+            <%= link_to "Voir les détails", flat_path(flat) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,33 @@
+<!-- app/views/flats/new.html.erb -->
+<h1>Ajouter un nouvel appartement</h1>
+
+<%= form_with(model: @flat, local: true) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :price_per_night %>
+    <%= form.number_field :price_per_night %>
+  </div>
+
+  <div>
+    <%= form.label :number_of_guests %>
+    <%= form.number_field :number_of_guests %>
+  </div>
+
+  <div>
+    <%= form.submit "Ajouter l'appartement" %>
+  </div>
+<% end %>
